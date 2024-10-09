@@ -14,6 +14,6 @@ namespace TraversalCoreProject.EntityLayer.Concrete
         public string SmallImageTitle { get; set; }
         public string SmallImageDescription { get; set; }
         public string SmallImageUrl { get; set; }
-        public string SmalImageStatus { get; set; }
+        public bool SmalImageStatus { get; set; }
     }
 }

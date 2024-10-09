@@ -38,6 +38,11 @@ namespace TraversalCoreProject.BusinessLayer.Concrete
            _commentDal.Insert(entity);
         }
 
+        public List<Comment> TGetDestinationById(int id)
+        {
+            return _commentDal.GetListByFilter(x => x.DestinationId == id);
+        }
+
         public void TUpdate(Comment entity)
         {
             _commentDal.Update(entity);

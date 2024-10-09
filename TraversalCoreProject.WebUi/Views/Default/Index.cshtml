@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TraversalUiLayout.cshtml";
+}
+
+@await Component.InvokeAsync("_DefaultSliderComponentPartial")
+@await Component.InvokeAsync("_DefaultDestinationsComponentPartial")
+@await Component.InvokeAsync("_DefaultStatisticsComponentPartial")
+
+<div class="best-rooms py-5">
+    <div class="container py-md-5">
+        <div class="ban-content-inf row">
+            @await Component.InvokeAsync("_DefaultFeatureBigImageComponentPartial")
+            <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
+                <div class="row">
+                    @await Component.InvokeAsync("_DefaultFeatureSmallImageComponentPartial")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@await Component.InvokeAsync("_DefaultSubAboutComponentPartial")
+@await Component.InvokeAsync("_DefaultTestimonialComponentPartial")
+
