@@ -12,6 +12,8 @@ namespace TraversalCoreProject.DataAccessLayer.EntityFramework
 {
     public class EfDestinationDal : GenericRepository<Destination>, IDestinationDal
     {
+    
+
         public EfDestinationDal(TraversalContext context) : base(context)
         {
         }
