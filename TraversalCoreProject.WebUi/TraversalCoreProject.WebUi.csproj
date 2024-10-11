@@ -12,6 +12,9 @@
     <None Include="wwwroot\login-form-02\fonts\.DS_Store" />
     <None Include="wwwroot\login-form-02\images\.DS_Store" />
     <None Include="wwwroot\login-form-02\scss\.DS_Store" />
+    <None Include="wwwroot\sneat-1.0.0\.github\workflows\handle-new-issue-comment.yml" />
+    <None Include="wwwroot\sneat-1.0.0\.github\workflows\handle-new-issue.yml" />
+    <None Include="wwwroot\sneat-1.0.0\.github\workflows\issue-staler.yml" />
     <None Include="wwwroot\soft-ui-dashboard\.git\COMMIT_EDITMSG" />
     <None Include="wwwroot\soft-ui-dashboard\.git\config" />
     <None Include="wwwroot\soft-ui-dashboard\.git\description" />
@@ -370,6 +373,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Member\Data\" />
     <Folder Include="wwwroot\userimages\" />
     <Folder Include="wwwroot\soft-ui-dashboard\.git\objects\info\" />

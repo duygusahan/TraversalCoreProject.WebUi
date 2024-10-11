@@ -1,0 +1,159 @@
+﻿@model TraversalCoreProject.EntityLayer.Concrete.Destination
+@{
+    ViewData["Title"] = "AddDestination";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card mb-4">
+        <h5 class="card-header">Yeni Rota Ekle</h5>
+        <div class="card-body">
+            <form  method="post">
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Başlığı</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="City"
+                               placeholder="Tur Başlığınızı Yazınız" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Adı</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="TourName"
+                               placeholder="Tur Adını Yazınız" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Gezi Süresi</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="DayNight"
+                               placeholder="Tur'un Süresini Yazınız" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Ücreti</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Price"
+                               placeholder="Tur Ücretini Yazınız" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Görseli</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="ImageUrl"
+                               placeholder="Tur Görsel Url`ini Giriniz" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Sırasında Gezilecek Şehirler</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Description"
+                               placeholder="Turda Ziyaret Edilecek Şehirleri Yazınız" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Kapasitesi</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Capacity"
+                               placeholder="Tur İçin Belirlenen Kişi Sayısını Yazınız" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Kapak Fotoğrafı</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="CoverImageUrl"
+                               placeholder="Tur Kapak Fotoğrafı Url`ini Yazınız" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Blogu Açıklama Yazısı</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="MainDetails"
+                               placeholder="Tur Ana Açıklamasını Yazınız" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Alt Başlık 1</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Title1"
+                               placeholder="Tur Alt Başlığını Yazınız" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Alt Açıklama 1</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Details1"
+                               placeholder="Tur Alt Açıklama Yazınız" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Alt Başlık 2</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Title2"
+                               placeholder="Tur Alt Başlığını Yazınız" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Alt Açıklama 2</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Details2"
+                               placeholder="Tur Alt Açıklama Yazınız" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Blog Görseli</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Image2"
+                               placeholder="Tur Blog Görseli Url`ini Yazınız" />
+                    </div>
+                </div>
+
+                <!-- Submit button -->
+                <div class="card-body">
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
