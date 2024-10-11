@@ -28,6 +28,12 @@ builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 builder.Services.AddScoped<ICommentDal, EfCommentDal>();
 builder.Services.AddScoped<ICommentService, CommentManager>();
 
+builder.Services.AddScoped<IReservationDal, EfReservationDal>();
+builder.Services.AddScoped<IReservationService, ReservationManager>();
+
+builder.Services.AddScoped<IGuideDal , EfGuideDal>();
+builder.Services.AddScoped<IGuideService , GuideManager>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

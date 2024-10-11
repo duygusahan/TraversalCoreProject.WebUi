@@ -12,5 +12,6 @@ namespace TraversalCoreProject.EntityLayer.Concrete
         public string Name { get; set; }
         public string Surname { get; set; }
         public string ImageUrl { get; set; }
+        public List<Reservation> Reservations { get; set; }
     }
 }
