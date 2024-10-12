@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <div class="row">
+            @await Component.InvokeAsync("_AdminDashboardBannerComponentPartial")
+            @await Component.InvokeAsync("_AdminDashboardStatistics1ComponentPartial")
+           
+            <!-- Total Revenue -->
+            @await Component.InvokeAsync("_AdminDashboardTotalRevenueComponentPartial")
+            <!--/ Total Revenue -->
+            @await Component.InvokeAsync("_AdminDashboardStatistics2ComponentPartial")
+        </div>
+        <div class="row">
+            <!-- Order Statistics -->
+            @await Component.InvokeAsync("_AdminDashboardDestinationStatisticsComponentPartial")
+            <!--/ Order Statistics -->
+            <!-- Expense Overview -->
+            @await Component.InvokeAsync("_AdminDashboardDestinationStatistics2ComponentPartial")
+            <!--/ Expense Overview -->
+            <!-- Transactions -->
+            @await Component.InvokeAsync("_AdminDashboardGuideListComponentPartial")
+            <!--/ Transactions -->
+        </div>
+    </div>
+    <!-- / Content -->
+    <!-- Footer -->
+    
+    <!-- / Footer -->
+
+    <div class="content-backdrop fade"></div>
+</div>
+
+<script src="~/sneat-1.0.0/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+<script src="~/sneat-1.0.0/assets/js/dashboards-analytics.js"></script>

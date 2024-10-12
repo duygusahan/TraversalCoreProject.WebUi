@@ -1,8 +1,252 @@
-﻿
+﻿@model TraversalCoreProject.EntityLayer.Concrete.Destination
 @{
     ViewData["Title"] = "DestinationDetails";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>DestinationDetails</h1>
+<div class="row mb-5">
+    
+    <div class="col-md-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <img class="card-img-top" src="@Model.CoverImageUrl" alt="Card image cap" style="width:443px ; height:330px" />
+            <div class="card-body">
+                <h5 class="card-title">Tur Kapak Fotoğrafı</h5>
+                
+            </div>
+        </div>
+    </div>
 
+
+    <div class="col-md-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <img class="card-img-top" src="@Model.Image2" alt="Card image cap" style="width:443px ; height:330px" />
+            <div class="card-body">
+                <h5 class="card-title">Turun 1. Görseli</h5>
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <img class="card-img-top" src="@Model.ImageUrl" alt="Card image cap" style="width:443px ; height:330px" />
+            <div class="card-body">
+                <h5 class="card-title">Turun 2. Görseli</h5>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-12">
+        <h6 class="text-muted">Turun Ana Detayları</h6>
+        <div class="nav-align-top mb-4">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <button type="button"
+                            class="nav-link active"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-top-home"
+                            aria-controls="navs-top-home"
+                            aria-selected="true">
+                        Tur Başlığı
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button type="button"
+                            class="nav-link"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-top-profile"
+                            aria-controls="navs-top-profile"
+                            aria-selected="false">
+                       Tur Adı
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button type="button"
+                            class="nav-link"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-top-messages"
+                            aria-controls="navs-top-messages"
+                            aria-selected="false">
+                        Turun Süresi
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button type="button"
+                            class="nav-link"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-top-price"
+                            aria-controls="navs-top-price"
+                            aria-selected="false">
+                        Turun Ücreti
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button type="button"
+                            class="nav-link"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-top-description"
+                            aria-controls="navs-top-description"
+                            aria-selected="false">
+                        Turda Ziyaret Edilecek Şehirler
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button type="button"
+                            class="nav-link"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-top-capacity"
+                            aria-controls="navs-top-capacity"
+                            aria-selected="false">
+                        Tur Kontenjanı
+                    </button>
+                </li>
+               
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="navs-top-home" role="tabpanel">
+                    <p>
+                        @Model.City
+                    </p>
+                    
+                </div>
+                <div class="tab-pane fade" id="navs-top-profile" role="tabpanel">
+                    <p>
+                        @Model.TourName
+                    </p>
+                    
+                </div>
+                <div class="tab-pane fade" id="navs-top-messages" role="tabpanel">
+                    <p>
+                        @Model.DayNight
+                    </p>
+                    
+                </div>
+
+                <div class="tab-pane fade" id="navs-top-price" role="tabpanel">
+                    <p>
+                        @Model.Price
+                    </p>
+
+                </div>
+
+                <div class="tab-pane fade" id="navs-top-description" role="tabpanel">
+                    <p>
+                        @Model.Description
+                    </p>
+
+                </div>
+                <div class="tab-pane fade" id="navs-top-capacity" role="tabpanel">
+                    <p>
+                        @Model.Capacity
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+<div class="col-xl-12">
+    <h6 class="text-muted">Tur Blogu Detayları</h6>
+    <div class="nav-align-top mb-12">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <button type="button"
+                        class="nav-link"
+                        role="tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#navs-top-main"
+                        aria-controls="navs-top-main"
+                        aria-selected="false">
+                    Tur Blogu İçin Ana Açıklama
+                </button>
+            </li>
+            <li class="nav-item">
+                <button type="button"
+                        class="nav-link"
+                        role="tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#navs-top-title1"
+                        aria-controls="navs-top-title1"
+                        aria-selected="false">
+                    Tur Blogu Alt Başlık 1 
+                </button>
+            </li>
+            <li class="nav-item">
+                <button type="button"
+                        class="nav-link"
+                        role="tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#navs-top-details1"
+                        aria-controls="navs-top-details1"
+                        aria-selected="false">
+                    Tur Blogu Alt Açıklama 1
+                </button>
+            </li>
+            <li class="nav-item">
+                <button type="button"
+                        class="nav-link"
+                        role="tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#navs-top-title2"
+                        aria-controls="navs-top-title2"
+                        aria-selected="false">
+                    Tur Blogu Alt Başlık 2
+                </button>
+            </li>
+            <li class="nav-item">
+                <button type="button"
+                        class="nav-link"
+                        role="tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#navs-top-details2"
+                        aria-controls="navs-top-details2"
+                        aria-selected="false">
+                    Tur Blogu Alt Açıklama 2
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="navs-top-main" role="tabpanel">
+                <p>
+                    @Model.MainDetails
+                </p>
+                
+            </div>
+            <div class="tab-pane fade" id="navs-top-title1" role="tabpanel">
+                <p>
+                    @Model.Title1
+                </p>
+               
+            </div>
+            <div class="tab-pane fade" id="navs-top-details1" role="tabpanel">
+                <p>
+                    @Model.Details1
+                </p>
+                
+            </div>
+            <div class="tab-pane fade" id="navs-top-title2" role="tabpanel">
+                <p>
+                    @Model.Title2
+                </p>
+
+            </div>
+            <div class="tab-pane fade" id="navs-top-details2" role="tabpanel">
+                <p>
+                    @Model.Details2
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
