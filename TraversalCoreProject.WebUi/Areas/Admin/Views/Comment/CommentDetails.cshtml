@@ -1,0 +1,11 @@
+﻿@model TraversalCoreProject.EntityLayer.Concrete.Comment
+@{
+    ViewData["Title"] = "CommentDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <label for="exampleFormControlTextarea1" class="form-label">Kullanıcı Yorumu</label>
+    <textarea class="form-control" asp-for="Content" rows="3"></textarea>
+</div>
+

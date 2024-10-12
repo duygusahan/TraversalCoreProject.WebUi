@@ -1,0 +1,47 @@
+﻿@model List<TraversalCoreProject.EntityLayer.Concrete.Comment>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Yorumlar</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Kullanıcı</th>
+                    <th>Tur</th>
+                    <th>Yorum</th>
+                    <th>Tarih</th>
+                    <th>Sil</th>
+                    <th>Yorumun Tamamını Gör</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@item.CommentId</strong></td>
+                        <td>@item.UserName</td>
+                        <td>@item.Destination.TourName</td>
+                        <td>@item.Content.Substring(0,20)...</td>
+                       
+                        <td><span class="badge bg-label-primary me-1">@item.Date.ToShortDateString()</span></td>
+                        <td>
+                            <a href="/Admin/Comment/DeleteComment/@item.CommentId" class="btn btn-danger">Sil</a>
+                        </td>
+
+                        <td>
+                            <a href="/Admin/Comment/CommentDetails/@item.CommentId" class="btn btn-dark">Yorumu Gör</a>
+                        </td>
+                    </tr>
+                }
+             
+               
+            </tbody>
+        </table>
+    </div>
+</div>
+
