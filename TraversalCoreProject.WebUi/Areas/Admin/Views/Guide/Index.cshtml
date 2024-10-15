@@ -1,0 +1,72 @@
+﻿@model List<TraversalCoreProject.EntityLayer.Concrete.Guide>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="card">
+    <h5 class="card-header">Yorumlar</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Görsel</th>
+                    <th>Ad Soyad</th>
+                    <th>Açıklama</th>
+                    <th>Durum</th>
+                    <th>Düzenle</th>
+                    
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@count</strong></td>
+                        <td><img src="@item.ImageUrl" style="width:75px ; height:75px" /></td>
+                        <td>@item.Name </td>
+                        <td>@item.Description.Substring(0,50)...</td>
+                        <td>
+
+                            @if (item.Status == true)
+                            {
+                                <a href="/Admin/Guide/ChangeStatusToFalse/@item.GuideId" class="btn btn-success">Aktif</a>
+                            }
+                            else
+                            {
+                                        <a href="/Admin/Guide/ChangeStatusToTrue/@item.GuideId" class="btn btn-danger">Pasif</a>
+                            }
+                        </td>
+
+                        
+                        <td>
+                            <div class="btn-group">
+                                <button type="button"
+                                        class="btn btn-outline-dark dropdown-toggle"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    İşlemler 
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/Admin/Guide/DeleteGuide/@item.GuideId">Sil</a></li>
+                                        <li><a class="dropdown-item" href="/Admin/Guide/UpdateGuide/@item.GuideId">Düzenle</a></li>
+                                    
+                                    
+                                </ul>
+                            </div>
+                        </td>
+
+                        
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<br />
+<a href="/Admin/Guide/AddGuide" class="btn btn-primary" >Yeni Rehber Ekle</a>

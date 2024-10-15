@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Logging;
+using Serilog;
 using TraversalCoreProject.BusinessLayer.Abstract;
 using TraversalCoreProject.BusinessLayer.Concrete;
 using TraversalCoreProject.DataAccessLayer.Abstract;
@@ -8,6 +10,9 @@ using TraversalCoreProject.EntityLayer.Concrete;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
+
 builder.Services.AddDbContext<TraversalContext>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<TraversalContext>();
 builder.Services.AddScoped<IDestinationService, DestinationManager>();
@@ -34,9 +39,38 @@ builder.Services.AddScoped<IReservationService, ReservationManager>();
 builder.Services.AddScoped<IGuideDal , EfGuideDal>();
 builder.Services.AddScoped<IGuideService , GuideManager>();
 
+builder.Services.AddScoped<IAppUserDal, EfAppUserDal>();
+builder.Services.AddScoped<IAppUserService, AppUserManager>();
+
+builder.Services.AddScoped<IExcelService , ExcelManager>();
+builder.Services.AddScoped<IPdfService, PdfManager>();
 builder.Services.AddControllersWithViews();
 
+
+var logPath = Path.Combine(Directory.GetCurrentDirectory(), "LogFile");
+if (!Directory.Exists(logPath))
+{
+    Directory.CreateDirectory(logPath); // Klasör yoksa oluþtur
+}
+
+builder.Services.AddLogging(log =>
+{
+    log.ClearProviders();
+    log.SetMinimumLevel(LogLevel.Debug);   // Minimum log seviyesi Debug
+    log.AddDebug();                        // Debug loglarý
+    log.AddFile(Path.Combine(logPath, "log.txt"), LogLevel.Information); // Dosyaya Information loglarý
+});
+
+
 var app = builder.Build();
+
+app.UseStatusCodePages(async x =>
+{
+    if (x.HttpContext.Response.StatusCode == 404)
+    {
+        x.HttpContext.Response.Redirect("/Error/NotFound404Page");
+    }
+});
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

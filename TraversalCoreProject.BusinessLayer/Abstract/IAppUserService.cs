@@ -7,9 +7,7 @@ using TraversalCoreProject.EntityLayer.Concrete;
 
 namespace TraversalCoreProject.BusinessLayer.Abstract
 {
-    public interface IGuideService:IGenericService<Guide>
+    public interface IAppUserService:IGenericService<AppUser>
     {
-        void TChangeStatusToTrue(int id);
-        void TChangeStatusToFalse(int id);
     }
 }

@@ -21,7 +21,7 @@ namespace TraversalCoreProject.DataAccessLayer.EntityFramework
         {
             using (var context = new TraversalContext())
             {
-                return context.Reservations.Include(x => x.Destination).Where(x => x.Status == "Onaylandı" && x.AppUserId == id).ToList();
+                return context.Reservations.Include(x => x.Destination).Include(x=>x.AppUser).Where(x => x.Status == "Onaylandı" && x.AppUserId == id).ToList();
             }
         }
 

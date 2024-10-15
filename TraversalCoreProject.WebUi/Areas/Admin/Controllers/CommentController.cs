@@ -24,5 +24,11 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
             var value = _commentService.TGetById(id);
             return View(value); 
         }
+
+        public IActionResult DeleteComment(int id)
+        {
+            _commentService.TDelete(id);
+            return RedirectToAction("Index");
+        }
     }
 }

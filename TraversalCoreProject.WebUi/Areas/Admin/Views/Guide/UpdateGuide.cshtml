@@ -1,0 +1,78 @@
+﻿@model TraversalCoreProject.EntityLayer.Concrete.Guide
+@{
+    ViewData["Title"] = "UpdateGuide";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card mb-4">
+        <h5 class="card-header">Yeni Rehber Ekle</h5>
+        <div class="card-body">
+            <form method="post">
+                <input type="hidden" asp-for="GuideId" />
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Rehberin Adı Soyadı</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Name"
+                               placeholder="Rehberin Adı Soyadını Yazınız" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Rehberin Görsel Urli</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="ImageUrl"
+                               placeholder="Rehberin Görsel Urlini Yazınız" />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Rehber Hakkında Açıklama</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Description"
+                               placeholder="Rehber Hakkında Kısa Bir Açıklama Yazınız" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Rehber Instagram Urli</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="InstagramUrl"
+                               placeholder="Instagram Bağlantı Adresinizi Buraya Yazınız" />
+
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Rehber Twitter Urli</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="TwitterUrl"
+                               placeholder="Twitter Bağlantı Adresinizi Buraya Yazınız" />
+                    </div>
+                </div>
+
+
+
+
+                <!-- Submit button -->
+                <div class="card-body">
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

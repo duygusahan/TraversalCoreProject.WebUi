@@ -15,5 +15,21 @@ namespace TraversalCoreProject.DataAccessLayer.EntityFramework
         public EfGuideDal(TraversalContext context) : base(context)
         {
         }
+
+        public void ChangeStatusToFalse(int id)
+        {
+            using var context = new TraversalContext();
+            var value = context.Guides.Find(id);
+            value.Status = false;
+            context.SaveChanges();
+        }
+
+        public void ChangeStatusToTrue(int id)
+        {
+            using var context = new TraversalContext();
+            var value = context.Guides.Find(id);
+            value.Status= true;
+            context.SaveChanges();
+        }
     }
 }

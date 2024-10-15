@@ -7,10 +7,7 @@ using TraversalCoreProject.EntityLayer.Concrete;
 
 namespace TraversalCoreProject.DataAccessLayer.Abstract
 {
-    public interface IGuideDal:IGenericDal<Guide>
+    public interface IAppUserDal:IGenericDal<AppUser>
     {
-        void ChangeStatusToTrue(int id);
-        void ChangeStatusToFalse(int id);
-            
     }
 }

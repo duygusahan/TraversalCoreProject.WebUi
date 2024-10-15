@@ -18,6 +18,17 @@ namespace TraversalCoreProject.BusinessLayer.Concrete
             _guideDal = guideDal;
         }
 
+        public void TChangeStatusToFalse(int id)
+        {
+            _guideDal.ChangeStatusToFalse(id);
+          
+        }
+
+        public void TChangeStatusToTrue(int id)
+        {
+            _guideDal.ChangeStatusToTrue(id);
+        }
+
         public void TDelete(int id)
         {
             _guideDal.Delete(id);
