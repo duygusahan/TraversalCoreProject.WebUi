@@ -42,6 +42,9 @@ builder.Services.AddScoped<IGuideService , GuideManager>();
 builder.Services.AddScoped<IAppUserDal, EfAppUserDal>();
 builder.Services.AddScoped<IAppUserService, AppUserManager>();
 
+builder.Services.AddScoped<IContactUsService, ContactUsManager>();
+builder.Services.AddScoped<IContactUsDal, EfContactUsDal>();
+
 builder.Services.AddScoped<IExcelService , ExcelManager>();
 builder.Services.AddScoped<IPdfService, PdfManager>();
 builder.Services.AddControllersWithViews();

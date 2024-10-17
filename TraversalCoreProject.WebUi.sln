@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraversalCoreProject.WebUi", "TraversalCoreProject.WebUi\TraversalCoreProject.WebUi.csproj", "{282C8CEC-E41F-439E-85FD-3CF83B03FCDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraversalCoreProject.WebUi", "TraversalCoreProject.WebUi\TraversalCoreProject.WebUi.csproj", "{282C8CEC-E41F-439E-85FD-3CF83B03FCDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraversalCoreProject.DataAccessLayer", "TraversalCoreProject.DataAccessLayer\TraversalCoreProject.DataAccessLayer.csproj", "{1ECAABAA-9BA1-4BDE-8EB1-824E62F33274}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraversalCoreProject.DataAccessLayer", "TraversalCoreProject.DataAccessLayer\TraversalCoreProject.DataAccessLayer.csproj", "{1ECAABAA-9BA1-4BDE-8EB1-824E62F33274}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraversalCoreProject.BusinessLayer", "TraversalCoreProject.BusinessLayer\TraversalCoreProject.BusinessLayer.csproj", "{800A33FC-E792-4E53-962E-750A7E0D9BFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraversalCoreProject.BusinessLayer", "TraversalCoreProject.BusinessLayer\TraversalCoreProject.BusinessLayer.csproj", "{800A33FC-E792-4E53-962E-750A7E0D9BFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraversalCoreProject.EntityLayer", "TraversalCoreProject.EntityLayer\TraversalCoreProject.EntityLayer.csproj", "{A1AB6392-CCF2-45CE-9D23-9DAB4BB8A04C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraversalCoreProject.EntityLayer", "TraversalCoreProject.EntityLayer\TraversalCoreProject.EntityLayer.csproj", "{A1AB6392-CCF2-45CE-9D23-9DAB4BB8A04C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraversalCoreProject.DtoLayer", "TraversalCoreProject.DtoLayer\TraversalCoreProject.DtoLayer.csproj", "{3D7E81B8-C6C2-49A9-8D79-10F9031C52C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{A1AB6392-CCF2-45CE-9D23-9DAB4BB8A04C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1AB6392-CCF2-45CE-9D23-9DAB4BB8A04C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1AB6392-CCF2-45CE-9D23-9DAB4BB8A04C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D7E81B8-C6C2-49A9-8D79-10F9031C52C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D7E81B8-C6C2-49A9-8D79-10F9031C52C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D7E81B8-C6C2-49A9-8D79-10F9031C52C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D7E81B8-C6C2-49A9-8D79-10F9031C52C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

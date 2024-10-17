@@ -7,8 +7,7 @@ using TraversalCoreProject.EntityLayer.Concrete;
 
 namespace TraversalCoreProject.BusinessLayer.Abstract
 {
-    public interface IDestinationService : IGenericService<Destination>
+    public interface IContactUsService:IGenericService<ContactUs>
     {
-        
     }
 }

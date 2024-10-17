@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using TraversalCoreProject.EntityLayer.Concrete;
 
-namespace TraversalCoreProject.BusinessLayer.Abstract
+namespace TraversalCoreProject.DataAccessLayer.Abstract
 {
-    public interface IDestinationService : IGenericService<Destination>
+    public interface IContactUsDal:IGenericDal<ContactUs>
     {
-        
     }
 }

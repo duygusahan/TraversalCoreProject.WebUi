@@ -1,0 +1,128 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<h2>Şehir - Ülke İşlemleri</h2>
+<br />
+
+<button type="button" id="btngetlist" class="btn btn-outline-info">Şehir Listesi</button>
+<button type="button" id="btngetbyid" class="btn btn-outline-primary">Şehir Getir</button>
+<button type="button" id="btnaddcity" class="btn btn-outline-warning">Şehir Ekle</button>
+<button type="button" id="btndeletecity" class="btn btn-outline-danger">Şehir Sil</button>
+<button type="button" id="btnupdatecity" class="btn btn-outline-success">Şehir Güncelle</button>
+
+<br />
+<br />
+
+<div id="citylist">
+    Buraya Şehir Listesi Gelecek
+</div>
+
+<div>
+    <input type="text" id="txtcity" placeholder="Şehir adını giriniz" class="form-control" />
+    <br />
+    <input type="text" id="txtdaynight" placeholder="Gün - gece sayısı" class="form-control" />
+    <br />
+    <input type="text" id="txtprice" placeholder="Fiyat" class="form-control" />
+    <br />
+    <input type="text" id="txtcapacity" placeholder="Konaklayacak kişi sayısı" class="form-control" />
+    <br />
+    <input type="text" id="txttourname" placeholder="Tur rotası adı" class="form-control" />
+    <input type="text" id="txtdescription" placeholder="Tur açıklaması" class="form-control" />
+    <input type="text" id="txtstatus" placeholder="Turun durumu" class="form-control" />
+    <input type="text" id="txtımageurl" placeholder="Turun görsel 1 " class="form-control" />
+    <input type="text" id="txtdetails" placeholder="Turun detayı " class="form-control" />
+    <input type="text" id="txtdetails1" placeholder="Turun detayı 1" class="form-control" />
+    <input type="text" id="txtdetails2" placeholder="Turun detayı 2" class="form-control" />
+    <input type="text" id="txttitle1" placeholder="Turun başlığı 1" class="form-control" />
+    <input type="text" id="txttitle2" placeholder="Turun başlığı 2" class="form-control" />
+    <input type="text" id="txtimage2" placeholder="Turungörseli 2" class="form-control" />
+    <input type="text" id="txtcoverımageurl" placeholder="Turun kapak görseli " class="form-control" />
+</div>
+<br />
+
+<div>
+    <input type="text" id="txtid" placeholder="Şehir ID değerini giriniz" class="form-control" />
+</div>
+
+<div id="destinationlistbyid">
+</div>
+
+
+<script>
+    $("#btngetlist").click(function () {
+       $.ajax({
+           contentType:  "application/json",
+           dataType:  "json",
+           type:  "Get",
+           url:  "/Admin/City/CityList/",
+           success: function (func) {
+               let w = jQuery.parseJSON(func);
+               console.log(w);
+               let tablehtml = "<table class=table table-bordered> <tr><th> Şehir Adı </th> <th> Gün-Gece </th> <th> Fiyatı </th> </tr>";
+               $.each(w, (index, value) => 
+               {
+                       tablehtml += `<tr><td>${value.TourName}</td> <td>${value.DayNight}</td> <td> ${value.Price} ₺ </td> </tr>`
+                 });
+                   tablehtml += "</table>";
+                   $("#citylist").html(tablehtml);
+               }
+           });
+       });
+
+
+    $("#btnaddcity").click(function (){
+          
+          let cityvalues={
+              TourName:$("#txttourname").val(),
+              City:$("#txtcity").val(),
+              ImageUrl:$("#txtımageurl").val(),
+              Description:$("#txtdescription").val(),
+             
+              Status:$("#txtstatus").val(),
+              CoverImageUrl:$("#txtcoverımageurl").val(),
+              MainDetails:$("#txtdetails").val(),
+              Details1:$("#txtdetails1").val(),
+              Details2:$("#txtdetails2").val(),
+              Title1:$("#txttitle1").val(),
+              Title2:$("#txttitle2").val(),
+              Image2:$("#txtimage2").val(),
+              DayNight:$("#txtdaynight").val(),
+              Price:$("#txtprice").val(),
+              Capacity:$("#txtcapacity").val()
+          };
+
+          $.ajax({
+              type:"post",
+              url:  "/Admin/City/AddCity/",
+              data:cityvalues,
+              success: function (func){
+                  let result = jQuery.parseJSON(func);
+                  alert("Tur Başarıyla Eklendi");
+              }
+          });
+
+       });
+
+    $("#btngetbyid").click(x => {
+        let id = $("#txtid").val();
+
+        $.ajax({
+            contentType: "application/json",
+            dataType: "json",
+            type: "Get",
+            url: "/Admin/City/GetById/",
+            data: { DestinationId: id },
+            success: function (fun2) {
+                let result = jQuery.parseJSON(fun2);
+                console.log(result);
+                let htmlstr = `<table class=table table-bordered><tr><th>Şehir Adı</th><th>Gün-Gece</th><th>Fiyatı</th></tr><tr><td>${result.TourName}</td><td>${result.DayNight}</td><td>${result.Capacity}</td></tr></table>`;
+                $("#destinationlistbyid").html(htmlstr);
+            }
+        });
+    });
+</script>
+

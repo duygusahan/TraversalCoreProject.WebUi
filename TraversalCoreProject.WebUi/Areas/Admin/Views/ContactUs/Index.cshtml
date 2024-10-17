@@ -1,0 +1,56 @@
+﻿@model List<TraversalCoreProject.EntityLayer.Concrete.ContactUs>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+     
+        <div class="card mb-12">
+            <h5 class="card-header">Bize Ulaşın Mesajları</h5>
+            <div class="row g-0">
+                <div class="col-md-12 p-4">
+                   
+                    <div class="toast-container">
+                       
+                        @foreach(var item in Model)
+                        {
+                            <div class="bs-toast toast fade show bg-primary"
+                                 role="alert"
+                                 aria-live="assertive"
+                                 aria-atomic="true" style="width: 800px; height: auto;">
+
+                                <div class="toast-header">
+                                    <i class="bx bx-bell me-2"></i>
+                                    <div class="me-auto fw-semibold">@item.Name</div>
+                                    
+                                    <small>@item.MessageDate.ToShortDateString()</small>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                </div>
+
+                               
+                                     
+                                <div class="toast-body">
+                                    <small class="me-auto fw-semibold">@item.Subject</small>
+                                    <br />
+                                    @item.MessageBody
+                                </div>
+                            </div>
+                        }
+                       
+
+                      
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    
+    </div>
+  
+    <div class="content-backdrop fade"></div>
+</div>
+

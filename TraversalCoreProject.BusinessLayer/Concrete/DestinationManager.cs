@@ -38,6 +38,9 @@ namespace TraversalCoreProject.BusinessLayer.Concrete
           _destinationDal.Insert(entity);
         }
 
+        
+       
+
         public void TUpdate(Destination entity)
         {
            _destinationDal.Update(entity);
