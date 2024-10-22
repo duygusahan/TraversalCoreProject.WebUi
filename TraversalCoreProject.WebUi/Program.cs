@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Logging;
 using Serilog;
+using System.Reflection;
 using TraversalCoreProject.BusinessLayer.Abstract;
 using TraversalCoreProject.BusinessLayer.Concrete;
 using TraversalCoreProject.DataAccessLayer.Abstract;
@@ -45,9 +46,17 @@ builder.Services.AddScoped<IAppUserService, AppUserManager>();
 builder.Services.AddScoped<IContactUsService, ContactUsManager>();
 builder.Services.AddScoped<IContactUsDal, EfContactUsDal>();
 
+
+builder.Services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
+builder.Services.AddScoped<IAnnouncementService , AnnouncementManager>();
+
 builder.Services.AddScoped<IExcelService , ExcelManager>();
 builder.Services.AddScoped<IPdfService, PdfManager>();
+
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
 builder.Services.AddControllersWithViews();
+
 
 
 var logPath = Path.Combine(Directory.GetCurrentDirectory(), "LogFile");
@@ -59,9 +68,9 @@ if (!Directory.Exists(logPath))
 builder.Services.AddLogging(log =>
 {
     log.ClearProviders();
-    log.SetMinimumLevel(LogLevel.Debug);   // Minimum log seviyesi Debug
-    log.AddDebug();                        // Debug loglarý
-    log.AddFile(Path.Combine(logPath, "log.txt"), LogLevel.Information); // Dosyaya Information loglarý
+    log.SetMinimumLevel(LogLevel.Debug);  
+    log.AddDebug();                        
+    log.AddFile(Path.Combine(logPath, "log.txt"), LogLevel.Information); 
 });
 
 
