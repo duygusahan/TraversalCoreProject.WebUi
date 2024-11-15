@@ -1,0 +1,49 @@
+﻿@model TraversalCoreProject.DtoLayer.Dtos.AnnouncementDtos.UpdateAnnouncementDto
+@{
+    ViewData["Title"] = "UpdateAnnouncement";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <!-- Basic Layout -->
+    <div class="col-xxl">
+        <div class="card mb-12">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <h5 class="mb-0">Duyuru Ekle</h5>
+
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label" for="basic-default-name">Başlık</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" asp-for="Title" placeholder="Duyurunuzun başlığını buraya yazınız..." />
+                            <span asp-validation-for="Title" class="danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label" for="basic-default-message">İçerik</label>
+                        <div class="col-sm-10">
+                            <textarea asp-for="Content"
+                                      class="form-control"
+                                      placeholder="Duyurunuzun içeriğini buraya yazınız..."
+                                      aria-label="Duyurunuzun içeriğini buraya yazınız..."
+                                      aria-describedby="basic-icon-default-message2"></textarea>
+                            <span asp-validation-for="Content" class="danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Basic with Icons -->
+
+</div>
+

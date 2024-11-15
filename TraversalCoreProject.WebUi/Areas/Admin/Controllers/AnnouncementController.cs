@@ -11,25 +11,18 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
     public class AnnouncementController : Controller
     {
         private readonly IAnnouncementService _announcementService;
-       
-        public AnnouncementController(IAnnouncementService announcementService)
+        private readonly IMapper _mapper;
+
+        public AnnouncementController(IAnnouncementService announcementService, IMapper mapper)
         {
             _announcementService = announcementService;
+            _mapper = mapper;
         }
 
         public IActionResult Index()
         {
-            List<Announcement> announcements = _announcementService.TGetListAll();
-            List<ResultAnnouncementViewModel> model = new List<ResultAnnouncementViewModel>();
-            foreach(var item in announcements)
-            {
-                ResultAnnouncementViewModel result = new ResultAnnouncementViewModel();
-                result.AnnouncementId= item.AnnouncementId;
-                result.Title= item.Title;
-                result.Content= item.Content;   
-                model.Add(result);
-            }
-            return View(model);
+            var values = _mapper.Map<List<ResultAnnouncementDto>>(_announcementService.TGetListAll());
+            return View(values);
         }
         [HttpGet]
         public IActionResult AddAnnouncement() 
@@ -39,7 +32,45 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult AddAnnouncement(AddAnnouncementDto addAnnouncementDto)
         {
-            
+            if (ModelState.IsValid)
+            {
+                _announcementService.TInsert(new Announcement()
+                {
+                    Content = addAnnouncementDto.Content,
+                    Title = addAnnouncementDto.Title,
+                    Date = DateTime.Now,
+                });
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        public IActionResult DeleteAnnouncement(int id) 
+        {
+            _announcementService.TDelete(id);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateAnnouncement(int id)
+        {
+            var values=_mapper.Map<UpdateAnnouncementDto>(_announcementService.TGetById(id));
+            return View(values);
+        }
+        [HttpPost]
+        public IActionResult UpdateAnnouncement(UpdateAnnouncementDto updateAnnouncementDto)
+        {
+            if (ModelState.IsValid)
+            {
+                _announcementService.TUpdate(new Announcement
+                {
+                    AnnouncementId = updateAnnouncementDto.AnnouncementId,
+                    Content = updateAnnouncementDto.Content,
+                    Title = updateAnnouncementDto.Title,
+                    Date = Convert.ToDateTime(DateTime.Now.ToShortDateString())
+                });
+                return RedirectToAction("Index");
+            }
             return View();
         }
     }

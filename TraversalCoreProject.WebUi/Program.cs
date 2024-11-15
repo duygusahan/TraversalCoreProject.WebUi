@@ -1,11 +1,16 @@
+using FluentValidation;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using System.Reflection;
 using TraversalCoreProject.BusinessLayer.Abstract;
 using TraversalCoreProject.BusinessLayer.Concrete;
+using TraversalCoreProject.BusinessLayer.Container;
+
+using TraversalCoreProject.BusinessLayer.ValidationRules;
 using TraversalCoreProject.DataAccessLayer.Abstract;
 using TraversalCoreProject.DataAccessLayer.Concrete;
 using TraversalCoreProject.DataAccessLayer.EntityFramework;
+using TraversalCoreProject.DtoLayer.Dtos.AnnouncementDtos;
 using TraversalCoreProject.EntityLayer.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -53,7 +58,15 @@ builder.Services.AddScoped<IAnnouncementService , AnnouncementManager>();
 builder.Services.AddScoped<IExcelService , ExcelManager>();
 builder.Services.AddScoped<IPdfService, PdfManager>();
 
+
+
+
+
+
+
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+builder.Services.CustomerValidator();
 
 builder.Services.AddControllersWithViews();
 

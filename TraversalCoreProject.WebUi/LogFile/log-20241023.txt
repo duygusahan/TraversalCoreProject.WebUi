@@ -1,0 +1,78 @@
+2024-10-23T12:07:19.8112145+03:00  [INF] User profile is available. Using '"C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-10-23T12:07:20.1163169+03:00  [INF] Now listening on: "https://localhost:7284" (d826f4b8)
+2024-10-23T12:07:20.1165739+03:00  [INF] Now listening on: "http://localhost:5230" (d826f4b8)
+2024-10-23T12:07:20.2358862+03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-10-23T12:07:20.2363717+03:00  [INF] Hosting environment: "Development" (c3307c92)
+2024-10-23T12:07:20.2364721+03:00  [INF] Content root path: "C:\Users\user\source\repos\TraversalCoreProject.WebUi\TraversalCoreProject.WebUi\" (b5d60022)
+2024-10-23T12:07:21.4552193+03:00 0HN7J88CP0AS6:00000001 [INF] Request starting HTTP/2 GET https://localhost:7284/Admin/Announcement/Index - - (ca22a1cb)
+2024-10-23T12:07:22.7965126+03:00 0HN7J88CP0AS6:00000001 [INF] Executing endpoint '"TraversalCoreProject.WebUi.Areas.Admin.Controllers.AnnouncementController.Index (TraversalCoreProject.WebUi)"' (500cc934)
+2024-10-23T12:07:22.9226188+03:00 0HN7J88CP0AS6:00000001 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Announcement\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "TraversalCoreProject.WebUi.Areas.Admin.Controllers.AnnouncementController" ("TraversalCoreProject.WebUi"). (122b2fdf)
+2024-10-23T12:07:28.6812812+03:00 0HN7J88CP0AS6:00000001 [INF] Executed action "TraversalCoreProject.WebUi.Areas.Admin.Controllers.AnnouncementController.Index (TraversalCoreProject.WebUi)" in 5750.393ms (afa2e885)
+2024-10-23T12:07:28.6821772+03:00 0HN7J88CP0AS6:00000001 [INF] Executed endpoint '"TraversalCoreProject.WebUi.Areas.Admin.Controllers.AnnouncementController.Index (TraversalCoreProject.WebUi)"' (99874f2b)
+2024-10-23T12:07:28.6872078+03:00 0HN7J88CP0AS6:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[TraversalCoreProject.EntityLayer.Concrete.Announcement, TraversalCoreProject.EntityLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[TraversalCoreProject.DtoLayer.Dtos.AnnouncementDtos.ResultAnnouncementDto, TraversalCoreProject.DtoLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Announcement -> ResultAnnouncementDto
+TraversalCoreProject.EntityLayer.Concrete.Announcement -> TraversalCoreProject.DtoLayer.Dtos.AnnouncementDtos.ResultAnnouncementDto
+   at lambda_method72(Closure , Announcement , ResultAnnouncementDto , ResolutionContext )
+   at lambda_method71(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method71(Closure , Object , List`1 , ResolutionContext )
+   at TraversalCoreProject.WebUi.Areas.Admin.Controllers.AnnouncementController.Index() in C:\Users\user\source\repos\TraversalCoreProject.WebUi\TraversalCoreProject.WebUi\Areas\Admin\Controllers\AnnouncementController.cs:line 24
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-10-23T12:07:29.0232555+03:00 0HN7J88CP0AS6:00000001 [INF] Request finished HTTP/2 GET https://localhost:7284/Admin/Announcement/Index - - - 500 - text/html;+charset=utf-8 7582.6615ms (791a596a)
+2024-10-23T12:07:29.0484336+03:00 0HN7J88CP0AS6:00000005 [INF] Request starting HTTP/2 GET https://localhost:7284/_framework/aspnetcore-browser-refresh.js - - (ca22a1cb)
+2024-10-23T12:07:29.0484263+03:00 0HN7J88CP0AS6:00000003 [INF] Request starting HTTP/2 GET https://localhost:7284/_vs/browserLink - - (ca22a1cb)
+2024-10-23T12:07:29.0552194+03:00 0HN7J88CP0AS6:00000005 [INF] Request finished HTTP/2 GET https://localhost:7284/_framework/aspnetcore-browser-refresh.js - - - 200 13788 application/javascript;+charset=utf-8 5.8824ms (791a596a)
+2024-10-23T12:07:29.1406860+03:00 0HN7J88CP0AS6:00000003 [INF] Request finished HTTP/2 GET https://localhost:7284/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 92.2920ms (791a596a)
+2024-10-23T12:12:21.3898616+03:00  [INF] User profile is available. Using '"C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2024-10-23T12:12:21.5725394+03:00  [INF] Now listening on: "https://localhost:7284" (d826f4b8)
+2024-10-23T12:12:21.5727843+03:00  [INF] Now listening on: "http://localhost:5230" (d826f4b8)
+2024-10-23T12:12:21.6581222+03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-10-23T12:12:21.6586481+03:00  [INF] Hosting environment: "Development" (c3307c92)
+2024-10-23T12:12:21.6587624+03:00  [INF] Content root path: "C:\Users\user\source\repos\TraversalCoreProject.WebUi\TraversalCoreProject.WebUi\" (b5d60022)
+2024-10-23T12:12:22.9812807+03:00 0HN7J8B6KJPTC:00000001 [INF] Request starting HTTP/2 GET https://localhost:7284/Admin/Announcement/Index - - (ca22a1cb)
+2024-10-23T12:12:23.3227598+03:00 0HN7J8B6KJPTC:00000001 [INF] Executing endpoint '"TraversalCoreProject.WebUi.Areas.Admin.Controllers.AnnouncementController.Index (TraversalCoreProject.WebUi)"' (500cc934)
+2024-10-23T12:12:23.4384478+03:00 0HN7J8B6KJPTC:00000001 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Announcement\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "TraversalCoreProject.WebUi.Areas.Admin.Controllers.AnnouncementController" ("TraversalCoreProject.WebUi"). (122b2fdf)
+2024-10-23T12:12:27.1136530+03:00 0HN7J8B6KJPTC:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2024-10-23T12:12:27.3915885+03:00 0HN7J8B6KJPTC:00000001 [INF] Executed ViewResult - view "Index" executed in 270.8534ms. (f66409e9)
+2024-10-23T12:12:27.3938647+03:00 0HN7J8B6KJPTC:00000001 [INF] Executed action "TraversalCoreProject.WebUi.Areas.Admin.Controllers.AnnouncementController.Index (TraversalCoreProject.WebUi)" in 3952.269ms (afa2e885)
+2024-10-23T12:12:27.3940636+03:00 0HN7J8B6KJPTC:00000001 [INF] Executed endpoint '"TraversalCoreProject.WebUi.Areas.Admin.Controllers.AnnouncementController.Index (TraversalCoreProject.WebUi)"' (99874f2b)
+2024-10-23T12:12:27.4125254+03:00 0HN7J8B6KJPTC:00000003 [INF] Request starting HTTP/2 GET https://localhost:7284/sneat-1.0.0/assets/img/avatars/1.png - - (ca22a1cb)
+2024-10-23T12:12:27.4271874+03:00 0HN7J8B6KJPTC:00000001 [INF] Request finished HTTP/2 GET https://localhost:7284/Admin/Announcement/Index - - - 200 - text/html;+charset=utf-8 4456.1614ms (791a596a)
+2024-10-23T12:12:27.4273496+03:00 0HN7J8B6KJPTC:00000003 [INF] The file "/sneat-1.0.0/assets/img/avatars/1.png" was not modified (f1f8d725)
+2024-10-23T12:12:27.4296885+03:00 0HN7J8B6KJPTC:00000003 [INF] Request finished HTTP/2 GET https://localhost:7284/sneat-1.0.0/assets/img/avatars/1.png - - - 304 - image/png 17.3547ms (791a596a)
+2024-10-23T12:12:27.5078309+03:00 0HN7J8B6KJPTD:00000003 [INF] Request starting HTTP/2 GET https://localhost:7284/_vs/browserLink - - (ca22a1cb)
+2024-10-23T12:12:27.5081641+03:00 0HN7J8B6KJPTD:00000001 [INF] Request starting HTTP/2 GET https://localhost:7284/_framework/aspnetcore-browser-refresh.js - - (ca22a1cb)
+2024-10-23T12:12:27.5137268+03:00 0HN7J8B6KJPTD:00000001 [INF] Request finished HTTP/2 GET https://localhost:7284/_framework/aspnetcore-browser-refresh.js - - - 200 13788 application/javascript;+charset=utf-8 5.8227ms (791a596a)
+2024-10-23T12:12:27.5904244+03:00 0HN7J8B6KJPTD:00000003 [INF] Request finished HTTP/2 GET https://localhost:7284/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 82.5939ms (791a596a)
+2024-10-23T12:12:27.7493580+03:00 0HN7J8B6KJPTD:00000005 [INF] Request starting HTTP/2 GET https://localhost:7284/sneat-1.0.0/assets/vendor/fonts/boxicons/boxicons.woff2 - - (ca22a1cb)
+2024-10-23T12:12:27.7502717+03:00 0HN7J8B6KJPTD:00000005 [INF] The file "/sneat-1.0.0/assets/vendor/fonts/boxicons/boxicons.woff2" was not modified (f1f8d725)
+2024-10-23T12:12:27.7506694+03:00 0HN7J8B6KJPTD:00000005 [INF] Request finished HTTP/2 GET https://localhost:7284/sneat-1.0.0/assets/vendor/fonts/boxicons/boxicons.woff2 - - - 304 - font/woff2 1.3317ms (791a596a)

@@ -10,6 +10,8 @@ namespace TraversalCoreProject.WebUi.Mapping.AutoMapperProfile.AnnouncementMappi
         {
 
             CreateMap<Announcement, AddAnnouncementDto>().ReverseMap();
+            CreateMap<Announcement, ResultAnnouncementDto>().ReverseMap();
+            CreateMap<Announcement, UpdateAnnouncementDto>().ReverseMap();
 
         }
     }

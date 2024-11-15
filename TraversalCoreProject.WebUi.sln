@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraversalCoreProject.Busine
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraversalCoreProject.EntityLayer", "TraversalCoreProject.EntityLayer\TraversalCoreProject.EntityLayer.csproj", "{A1AB6392-CCF2-45CE-9D23-9DAB4BB8A04C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraversalCoreProject.DtoLayer", "TraversalCoreProject.DtoLayer\TraversalCoreProject.DtoLayer.csproj", "{3D7E81B8-C6C2-49A9-8D79-10F9031C52C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraversalCoreProject.DtoLayer", "TraversalCoreProject.DtoLayer\TraversalCoreProject.DtoLayer.csproj", "{3D7E81B8-C6C2-49A9-8D79-10F9031C52C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
