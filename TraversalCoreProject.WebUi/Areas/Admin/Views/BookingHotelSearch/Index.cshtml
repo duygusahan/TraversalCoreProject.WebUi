@@ -1,0 +1,36 @@
+﻿@using TraversalCoreProject.WebUi.Areas.Admin.Models
+@model BookingHotelSearchViewModel.Hotel[]
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="row mb-5">
+
+    @foreach (var hotel in Model)
+    {
+        
+
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100">
+                <img class="card-img-top" src="@hotel.property.photoUrls[1]" alt="Card image cap" style="width:445px ; height:330px" />
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @hotel.property.name
+                        <span style="margin-left: 10px; color: gold;">
+                            &#9733;
+                        </span>
+                        <span style="margin-left: 5px;">
+                            @hotel.property.reviewScore
+                        </span>
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+
+
+    }
+</div>
