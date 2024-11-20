@@ -1,0 +1,51 @@
+﻿@using TraversalCoreProject.WebUi.CQRS.Results.GuideResults
+@model GetGuideByIdQueryResult
+@{
+    ViewData["Title"] = "GetGuide";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card mb-4">
+        <h5 class="card-header">MediatR - Rehber Bilgi Düzenleme Sayfası</h5>
+        <div class="card-body">
+            <form method="post">
+                <input type="hidden" asp-for="GuideId" />
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Rehberin Adı Soyadı</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Name"
+                               placeholder="Rehberin Adı Soyadını Yazınız" />
+                       
+                    </div>
+                </div>
+
+               
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Rehber Hakkında Açıklama</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Description"
+                               placeholder="Rehber Hakkında Kısa Bir Açıklama Yazınız" />
+                       
+                    </div>
+                </div>
+
+                
+
+
+
+
+                <!-- Submit button -->
+                <div class="card-body">
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

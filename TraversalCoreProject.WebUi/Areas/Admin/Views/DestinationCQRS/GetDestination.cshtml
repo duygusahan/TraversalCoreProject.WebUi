@@ -1,0 +1,57 @@
+﻿@model GetDestinationByIdQueryResult
+@{
+    ViewData["Title"] = "GetDestination";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-md-12">
+    <div class="card mb-4">
+        <h5 class="card-header">Rota Düzenleme</h5>
+        <div class="card-body">
+            <form method="post">
+
+                <input type="hidden" asp-for="DestinationId" />
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Başlığı</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="City"
+                               placeholder="Tur Başlığınızı Yazınız" />
+                    </div>
+                </div>
+
+                
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Gezi Süresi</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Daynight"
+                               placeholder="Tur'un Süresini Yazınız" />
+                    </div>
+                </div>
+
+
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Gezi Ücreti</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Price" />
+                    </div>
+                </div>
+                
+            
+
+                <!-- Submit button -->
+                <div class="card-body">
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

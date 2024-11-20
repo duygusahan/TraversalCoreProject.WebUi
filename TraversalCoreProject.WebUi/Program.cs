@@ -1,4 +1,5 @@
 using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using System.Reflection;
@@ -12,6 +13,7 @@ using TraversalCoreProject.DataAccessLayer.Concrete;
 using TraversalCoreProject.DataAccessLayer.EntityFramework;
 using TraversalCoreProject.DtoLayer.Dtos.AnnouncementDtos;
 using TraversalCoreProject.EntityLayer.Concrete;
+using TraversalCoreProject.WebUi.CQRS.Handlers.DestinationHandlers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,10 +60,13 @@ builder.Services.AddScoped<IAnnouncementService , AnnouncementManager>();
 builder.Services.AddScoped<IExcelService , ExcelManager>();
 builder.Services.AddScoped<IPdfService, PdfManager>();
 
+builder.Services.AddScoped<GetAllDestinationQueryHandler>();
+
+builder.Services.AddScoped<GetDestinationByIdQueryHandler>();
+builder.Services.AddScoped<CreateDestinationCommandHandler>();
 
 
-
-
+builder.Services.AddMediatR(typeof(Program));
 
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());

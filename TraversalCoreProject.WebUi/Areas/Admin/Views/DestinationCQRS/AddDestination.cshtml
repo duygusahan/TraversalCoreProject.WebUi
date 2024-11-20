@@ -1,0 +1,65 @@
+﻿@model CreateDestinationCommand
+@{
+    ViewData["Title"] = "AddDestination";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card mb-4">
+        <h5 class="card-header">Yeni Rota Ekle (CQRS)</h5>
+        <div class="card-body">
+            <form method="post">
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Başlığı</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="City"
+                               placeholder="Tur Başlığınızı Yazınız" />
+                    </div>
+                </div>
+
+             
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Gezi Süresi</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="DayNight"
+                               placeholder="Tur'un Süresini Yazınız" />
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Ücreti</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Price"
+                               placeholder="Tur Ücretini Yazınız" />
+                    </div>
+                </div>
+
+                
+
+                <div class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Tur Kapasitesi</label>
+                        <input type="text"
+                               class="form-control"
+                               asp-for="Capacity"
+                               placeholder="Tur İçin Belirlenen Kişi Sayısını Yazınız" />
+                    </div>
+                </div>
+
+               
+                <!-- Submit button -->
+                <div class="card-body">
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
