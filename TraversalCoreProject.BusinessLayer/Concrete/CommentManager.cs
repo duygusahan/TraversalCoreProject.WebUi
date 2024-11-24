@@ -52,5 +52,10 @@ namespace TraversalCoreProject.BusinessLayer.Concrete
         {
             return _commentDal.GetCommentsWithDestination();
         }
+
+        public List<Comment> TGetCommentsWithDestinationAndUser(int id)
+        {
+            return _commentDal.GetCommentsWithDestinationAndUser(id);
+        }
     }
 }

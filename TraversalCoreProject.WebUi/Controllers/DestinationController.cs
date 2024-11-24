@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TraversalCoreProject.BusinessLayer.Abstract;
 using TraversalCoreProject.EntityLayer.Concrete;
 
 namespace TraversalCoreProject.WebUi.Controllers
 {
+    [AllowAnonymous]
     public class DestinationController : Controller
     {
         private readonly IDestinationService _destinationService;
@@ -21,6 +23,7 @@ namespace TraversalCoreProject.WebUi.Controllers
         public IActionResult DestinationDetails(int id)
         {
             ViewBag.i=id;
+            ViewBag.destId=id;
             var values=_destinationService.TGetById(id);
             return View(values);
         }

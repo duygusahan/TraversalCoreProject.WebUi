@@ -24,5 +24,13 @@ namespace TraversalCoreProject.DataAccessLayer.EntityFramework
                 return context.Comments.Include(x => x.Destination).ToList();
             }
         }
+
+        public List<Comment> GetCommentsWithDestinationAndUser(int id)
+        {
+            using (var context = new TraversalContext())
+            {
+                return context.Comments.Where(x=>x.DestinationId==id).Include(x => x.AppUser).ToList();
+            }
+        }
     }
 }

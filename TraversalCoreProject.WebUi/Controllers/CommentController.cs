@@ -14,8 +14,9 @@ namespace TraversalCoreProject.WebUi.Controllers
         }
 
         [HttpGet]
-        public PartialViewResult AddComment()
+        public PartialViewResult AddComment(int id)
         {
+            ViewBag.destId = id; 
             return PartialView();
         }
         [HttpPost]

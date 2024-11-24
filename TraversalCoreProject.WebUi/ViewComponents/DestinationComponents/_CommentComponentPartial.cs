@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TraversalCoreProject.BusinessLayer.Abstract;
+using TraversalCoreProject.DataAccessLayer.Concrete;
 
 namespace TraversalCoreProject.WebUi.ViewComponents.DestinationComponents
 {
@@ -11,10 +12,11 @@ namespace TraversalCoreProject.WebUi.ViewComponents.DestinationComponents
         {
             _commentService = commentService;
         }
-
+        TraversalContext context= new TraversalContext();
         public IViewComponentResult Invoke(int id)
         {
-            var value = _commentService.TGetDestinationById(id);
+            ViewBag.commentCount=context.Comments.Where(x=>x.DestinationId==id).Count();    
+            var value = _commentService.TGetCommentsWithDestinationAndUser(id); 
 
             return View(value);
 

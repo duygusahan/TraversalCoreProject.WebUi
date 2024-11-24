@@ -13,5 +13,6 @@ namespace TraversalCoreProject.BusinessLayer.Abstract
         List<Comment> TGetDestinationById(int id);
 
         List<Comment> TGetCommentsWithDestination();
+        List<Comment> TGetCommentsWithDestinationAndUser(int id);
     }
 }
