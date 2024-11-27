@@ -28,7 +28,8 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
         public IActionResult DeleteComment(int id)
         {
             _commentService.TDelete(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Comment", new { area = "Admin" });
+           
         }
     }
 }
