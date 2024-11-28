@@ -26,7 +26,10 @@ namespace TraversalCoreProject.EntityLayer.Concrete
         public string Title1 { get; set; }
         public string Title2 { get; set; }
         public string Image2 { get; set; }
+        public DateTime Date { get; set; }
         public List<Comment> Comments { get; set; }
         public List<Reservation> Reservations { get; set; }
+        public int? GuideId { get; set; }
+        public Guide Guide { get; set; }
     }
 }

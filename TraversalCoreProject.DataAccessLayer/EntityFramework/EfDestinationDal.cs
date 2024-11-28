@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,15 @@ namespace TraversalCoreProject.DataAccessLayer.EntityFramework
 
         public EfDestinationDal(TraversalContext context) : base(context)
         {
+        }
+
+        public Destination GetDestinationWithGuide(int id)
+        {
+            using (var context = new TraversalContext())
+            {
+                return context.Destinations.Where(x => x.DestinationId == id).Include(x => x.Guide).FirstOrDefault();
+            }
+
         }
     }
 }

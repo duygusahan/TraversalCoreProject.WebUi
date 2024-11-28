@@ -29,7 +29,7 @@ namespace TraversalCoreProject.WebUi.Controllers
             ViewBag.destId=id;
             var value = await _userManager.FindByNameAsync(User.Identity.Name);
             ViewBag.userId=value.Id;
-            var values=_destinationService.TGetById(id);
+            var values = _destinationService.TGetDestinationWithGuide(id);
             return View(values);
         }
         [HttpPost]
