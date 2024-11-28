@@ -28,6 +28,11 @@ namespace TraversalCoreProject.BusinessLayer.Concrete
             return _contactDal.GetById(id);
         }
 
+        public Contact TGetContactInfo()
+        {
+            return _contactDal.GetContactInfo();
+        }
+
         public List<Contact> TGetListAll()
         {
            return _contactDal.GetListAll();

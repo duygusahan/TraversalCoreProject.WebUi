@@ -53,6 +53,9 @@ builder.Services.AddScoped<IAppUserService, AppUserManager>();
 builder.Services.AddScoped<IContactUsService, ContactUsManager>();
 builder.Services.AddScoped<IContactUsDal, EfContactUsDal>();
 
+builder.Services.AddScoped<IContactService , ContactManager>();
+builder.Services.AddScoped<IContactDal , EfContactDal>();
+
 
 builder.Services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
 builder.Services.AddScoped<IAnnouncementService , AnnouncementManager>();
