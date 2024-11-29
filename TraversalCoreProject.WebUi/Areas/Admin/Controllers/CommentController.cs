@@ -4,6 +4,7 @@ using TraversalCoreProject.BusinessLayer.Abstract;
 namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Route("Admin/[controller]/[action]/{id?}")]
     public class CommentController : Controller
     {
         private readonly ICommentService _commentService;

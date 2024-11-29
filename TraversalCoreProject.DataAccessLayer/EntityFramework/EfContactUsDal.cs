@@ -15,5 +15,7 @@ namespace TraversalCoreProject.DataAccessLayer.EntityFramework
         public EfContactUsDal(TraversalContext context) : base(context)
         {
         }
+
+        
     }
 }

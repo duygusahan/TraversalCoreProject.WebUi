@@ -6,6 +6,7 @@ using TraversalCoreProject.WebUi.CQRS.Queries.DestinationQueries;
 namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Route("Admin/[controller]/[action]/{id?}")]
     public class DestinationCQRSController : Controller
     {
         private readonly GetAllDestinationQueryHandler _getAllDestinationQueryHandler;
@@ -40,7 +41,7 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
         public IActionResult AddDestination(CreateDestinationCommand command)
         {
             _createDestinationCommandHandler.Handle(command);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "DestinationCQRS", new { area = "Admin" });
         }
     }
 }

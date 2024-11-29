@@ -8,6 +8,7 @@ using TraversalCoreProject.WebUi.Areas.Admin.Models;
 namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Route("Admin/[controller]/[action]/{id?}")]
     public class AnnouncementController : Controller
     {
         private readonly IAnnouncementService _announcementService;
@@ -40,7 +41,7 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
                     Title = addAnnouncementDto.Title,
                     Date = DateTime.Now,
                 });
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Announcement", new { area = "Admin" });
             }
             return View();
         }
@@ -48,7 +49,7 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
         public IActionResult DeleteAnnouncement(int id) 
         {
             _announcementService.TDelete(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Announcement", new { area = "Admin" });
         }
 
         [HttpGet]
@@ -69,7 +70,7 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
                     Title = updateAnnouncementDto.Title,
                     Date = Convert.ToDateTime(DateTime.Now.ToShortDateString())
                 });
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Announcement", new { area = "Admin" });
             }
             return View();
         }

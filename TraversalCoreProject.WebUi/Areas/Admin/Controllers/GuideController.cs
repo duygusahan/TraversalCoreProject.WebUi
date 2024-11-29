@@ -46,7 +46,7 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
             ValidationResult result=validationRules.Validate(guide);
             if (result.IsValid) {
                 _guideService.TInsert(guide);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Guide", new { area = "Admin" });
             }
             else
             {
@@ -62,7 +62,7 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
         public IActionResult DeleteGuide(int id)
         {
             _guideService.TDelete(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Guide", new { area = "Admin" });
         }
         [HttpGet]
         public IActionResult UpdateGuide(int id)
@@ -75,7 +75,7 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
         {
             guide.Status = true;
             _guideService.TUpdate(guide);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Guide", new { area = "Admin" });
         }
     }
 }

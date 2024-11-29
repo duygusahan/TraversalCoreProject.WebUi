@@ -9,5 +9,6 @@ namespace TraversalCoreProject.BusinessLayer.Abstract
 {
     public interface IContactUsService:IGenericService<ContactUs>
     {
+        
     }
 }

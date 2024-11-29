@@ -5,6 +5,7 @@ using TraversalCoreProject.EntityLayer.Concrete;
 namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Route("Admin/[controller]/[action]/{id?}")]
     public class DestinationController : Controller
     {
         private readonly IDestinationService _destinationService;
@@ -29,14 +30,14 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
         public async Task<IActionResult> AddDestination(Destination destination)
         {
             _destinationService.TInsert(destination);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Destination", new { area = "Admin" });
         }
 
         public IActionResult DeleteDestination(int id)
         {
            
             _destinationService.TDelete(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Destination", new { area = "Admin" });
         }
         [HttpGet]
         public IActionResult UpdateDestination(int id)
@@ -48,7 +49,7 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
         public async Task<IActionResult> UpdateDestination(Destination destination)
         {
             _destinationService.TUpdate(destination);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Destination", new { area = "Admin" });
         }
 
         public IActionResult DestinationDetails(int id)

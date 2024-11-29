@@ -9,5 +9,6 @@ namespace TraversalCoreProject.DataAccessLayer.Abstract
 {
     public interface IContactUsDal:IGenericDal<ContactUs>
     {
+        
     }
 }

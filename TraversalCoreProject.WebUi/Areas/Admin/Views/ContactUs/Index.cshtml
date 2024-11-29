@@ -28,7 +28,10 @@
                                     <div class="me-auto fw-semibold">@item.Name</div>
                                     
                                     <small>@item.MessageDate.ToShortDateString()</small>
-                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    <form action="/Admin/ContactUs/DeleteMessage/@item.ContactUsId" method="post" style="display:inline;">
+                                        <button type="submit" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </form>
+
                                 </div>
 
                                

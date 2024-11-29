@@ -5,6 +5,7 @@ using TraversalCoreProject.EntityLayer.Concrete;
 namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Route("Admin/[controller]/[action]/{id?}")]
     public class UserController : Controller
     {
       
@@ -26,8 +27,8 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
         public IActionResult DeleteUser(int id) 
         {
             _userService.TDelete(id);
-            return RedirectToAction("Index");
-           
+            return RedirectToAction("Index", "User", new { area = "Admin" });
+
         }
 
         [HttpGet]
@@ -40,7 +41,7 @@ namespace TraversalCoreProject.WebUi.Areas.Admin.Controllers
         public IActionResult UpdateUser(AppUser appUser) 
         {
             _userService.TUpdate(appUser);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "User", new { area = "Admin" });
         }
 
         //public IActionResult CommentUser(int id) 
