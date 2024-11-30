@@ -1,0 +1,44 @@
+﻿@using TraversalCoreProject.EntityLayer.Concrete
+@model List<AppRole>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+
+<div class="card">
+    <h5 class="card-header">Roller</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Rol Adı</th>
+                    <th>Rolü Sil</th>
+                    <th>Rolü Düzenle</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@count</strong></td>
+                        <td>@item.Name</td>
+                        <td><a href="/Admin/Role/DeleteRole/@item.Id" class="btn btn-outline-danger">Sil</a></td>
+                        <td><a href="/Admin/Role/UpdateRole/@item.Id" class="btn btn-outline-success">Düzenle</a></td>
+                        
+
+                        
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+       
+    </div>
+</div>
+<br />
+<a href="/Admin/Role/CreateRole/" class="btn btn-dark">Yeni Rol Girişi</a>

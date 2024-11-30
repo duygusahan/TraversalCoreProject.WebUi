@@ -1,0 +1,40 @@
+﻿@using TraversalCoreProject.EntityLayer.Concrete
+@model List<AppUser>
+@{
+    ViewData["Title"] = "UserList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Kullanıcılar</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                  
+                    <th>Kullanıcı Adı</th>
+                    <th>Rol Ata</th>
+                   
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var item in Model)
+                {
+                    
+                    <tr>
+                        
+                        <td>@item.Name</td>
+                        <td><a href="/Admin/Role/AssignRole/@item.Id" class="btn btn-outline-dark">Rol Ata</a></td>
+                        
+
+
+
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+
+    </div>
+</div>

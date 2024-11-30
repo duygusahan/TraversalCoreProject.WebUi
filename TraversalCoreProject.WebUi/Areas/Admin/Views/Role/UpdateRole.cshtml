@@ -1,0 +1,13 @@
+﻿@model TraversalCoreProject.WebUi.Areas.Admin.Models.UpdateRoleViewModel
+@{
+    ViewData["Title"] = "UpdateRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="RoleId" />
+    <label>Rol Adı</label>
+    <input type="text" class="form-control" asp-for="RoleName" />
+    <br />
+    <button class="btn btn-danger">Kaydet</button>
+</form>

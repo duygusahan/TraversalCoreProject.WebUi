@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraversalCoreProject.Entity
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraversalCoreProject.DtoLayer", "TraversalCoreProject.DtoLayer\TraversalCoreProject.DtoLayer.csproj", "{3D7E81B8-C6C2-49A9-8D79-10F9031C52C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraversalCoreProject.SignalRApiMssql", "TraversalCoreProject.SignalRApiMssql\TraversalCoreProject.SignalRApiMssql.csproj", "{DBC5DCC3-CDBD-4515-A4BF-29BAED70C2BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{3D7E81B8-C6C2-49A9-8D79-10F9031C52C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D7E81B8-C6C2-49A9-8D79-10F9031C52C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D7E81B8-C6C2-49A9-8D79-10F9031C52C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBC5DCC3-CDBD-4515-A4BF-29BAED70C2BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC5DCC3-CDBD-4515-A4BF-29BAED70C2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBC5DCC3-CDBD-4515-A4BF-29BAED70C2BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBC5DCC3-CDBD-4515-A4BF-29BAED70C2BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
