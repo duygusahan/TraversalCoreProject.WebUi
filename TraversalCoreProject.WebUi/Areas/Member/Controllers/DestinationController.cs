@@ -6,6 +6,7 @@ using TraversalCoreProject.DataAccessLayer.EntityFramework;
 namespace TraversalCoreProject.WebUi.Areas.Member.Controllers
 {
     [Area("Member")]
+    [Route("Member/[controller]/[action]/{id?}")]
     public class DestinationController : Controller
     {
        private readonly IDestinationService _destinationService;

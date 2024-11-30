@@ -9,6 +9,7 @@ using TraversalCoreProject.EntityLayer.Concrete;
 namespace TraversalCoreProject.WebUi.Areas.Member.Controllers
 {
     [Area("Member")]
+    [Route("Member/[controller]/[action]/{id?}")]
     public class ReservationController : Controller
     {
        private readonly IDestinationService _destinationService;
@@ -65,7 +66,7 @@ namespace TraversalCoreProject.WebUi.Areas.Member.Controllers
             p.Status = "Onay Bekliyor";
             p.AppUserId = 3;
             _reservationService.TInsert(p);
-            return View("MyCurrentReservation");
+            return RedirectToAction("MyCurrentReservation" , "Reservation" , new { area = "Member" });
         }
     }
 }

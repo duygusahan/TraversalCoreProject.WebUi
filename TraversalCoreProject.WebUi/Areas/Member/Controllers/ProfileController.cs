@@ -46,7 +46,7 @@ namespace TraversalCoreProject.WebUi.Areas.Member.Controllers
             user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, p.password);
             var result =await _userManager.UpdateAsync(user);
             if (result.Succeeded) {
-             return RedirectToAction("SignIn", "Login");
+             return RedirectToAction("SignIn", "Login" , new {area="Member"});
             }
             return View();
         }

@@ -3,6 +3,7 @@
 namespace TraversalCoreProject.WebUi.Areas.Member.Controllers
 {
     [Area("Member")]
+    [Route("Member/[controller]/[action]/{id?}")]
     public class CommentController : Controller
     {
         public IActionResult Index()

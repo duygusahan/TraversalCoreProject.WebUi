@@ -33,6 +33,11 @@ namespace TraversalCoreProject.BusinessLayer.Concrete
             return _destinationDal.GetDestinationWithGuide(id);
         }
 
+        public List<Destination> TGetLast4Destination()
+        {
+            return _destinationDal.GetLast4Destination();
+        }
+
         public List<Destination> TGetListAll()
         {
            return _destinationDal.GetListAll();

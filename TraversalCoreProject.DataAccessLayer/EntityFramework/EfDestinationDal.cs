@@ -27,5 +27,14 @@ namespace TraversalCoreProject.DataAccessLayer.EntityFramework
             }
 
         }
+
+
+        List<Destination> IDestinationDal.GetLast4Destination()
+        {
+            using (var context = new TraversalContext())
+            {
+                return context.Destinations.OrderByDescending(x => x.DestinationId).Take(4).ToList();
+            }
+        }
     }
 }
