@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+
+@await Component.InvokeAsync("_ResultMemberLayoutHeadComponentPartial")
+<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-color="bg-gradient-x-purple-blue" data-col="2-columns">
+
+    <!-- fixed-top-->
+    @await Component.InvokeAsync("_ResultMemberLayoutNavbarComponentPartial")
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    @await Component.InvokeAsync("_ResultMemberLayoutSidebarComponentPartial")
+
+   @RenderBody()
+
+
+    @await Component.InvokeAsync("_ResultMemberLayoutFooterComponentPartial")
+    
+    @await Component.InvokeAsync("_ResultMemberLayoutScriptsComponentPartial")
+
+    
+    
+</body>
+</html>

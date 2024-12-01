@@ -1,60 +1,102 @@
 ﻿@model List<TraversalCoreProject.EntityLayer.Concrete.Reservation>
 @{
-    ViewData["Title"] = "MyApprovalReservation";
-    Layout = "~/Views/Shared/_UserLayout.cshtml";
+	ViewData["Title"] = "MyApprovalReservation";
+	Layout = "~/Views/Shared/_MemberLayout.cshtml";
+	int count = 0;
 }
 
 
 
-<div class="row">
-    <div class="col-12">
-        <div class="card mb-4">
-            <div class="card-header pb-0">
-                <h6>Onay bekleyen rezervasyonlarım</h6>
-              @*   <h6>@ViewBag.v</h6> *@
-            </div>
-            <div class="card-body px-0 pt-0 pb-2">
-                <div class="table-responsive p-0">
-                    <table class="table align-items-center mb-0">
-                        <thead>
-                            <tr>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Lokasyon</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kişi Sayısı</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rezarvasyon Tarihi</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Durum</th>
-                                <th class="text-secondary opacity-7"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach(var item in Model)
-                            {
-                                <tr>
-                                    <td>
-                                        <div class="d-flex px-2 py-1">
-                                          @item.ReservationId
-                                        </div>
-                                    </td>
-                                    <td>
-                                        @item.Destination.TourName
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        @item.PersonCount
-                                    </td>
-                                    <td class="align-middle text-center">
-                                       @item.ReservationDate.ToShortDateString()
-                                    </td>
-                                    <td class="align-middle text-center">
-                                      @item.Status
-                                    </td>
-                                </tr>
-                            }
-                           
-                            
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
+ <div class="app-content content"> 
+	<div class="content-wrapper">
+		<div class="content-wrapper-before"></div>
+		<div class="content-header row">
+			<div class="content-header-left col-md-4 col-12 mb-2">
+				<h3 class="content-header-title">Rezervasyonlarım</h3>
+			</div>
+			<div class="content-header-right col-md-8 col-12">
+				<div class="breadcrumbs-top float-md-right">
+					<div class="breadcrumb-wrapper mr-1">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="index.html">Ana Sayfa</a>
+							</li>
+							<li class="breadcrumb-item active">
+								Rezarvasyonlarım
+							</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content-body">
+			<!-- Basic Tables start -->
+
+
+			<div class="row">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title">Onay bekleyen rezervasyonlarım</h4>
+							<a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+							<div class="heading-elements">
+								<ul class="list-inline mb-0">
+									<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+									<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+									<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+									<li><a data-action="close"><i class="ft-x"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="card-content collapse show">
+							<div class="card-body">
+								<p>Merhaba aşağıda onay bekleyen rezarvasyonlarınız ile ilgili detaylara ulaşabilirsiniz.</p>
+							</div>
+							<div class="table-responsive">
+
+								@if (count > 0)
+								{
+									<table class="table">
+										<thead class="thead-dark">
+											<tr>
+												<th scope="col">#</th>
+												<th scope="col">Lokasyon</th>
+												<th scope="col">Kişi Sayısı</th>
+												<th scope="col">Rezarvasyon Tarihi</th>
+												<th scope="col">Durum</th>
+											</tr>
+										</thead>
+										<tbody>
+
+											@foreach (var item in Model)
+											{
+												count++;
+												<tr>
+													<th scope="row">@count</th>
+													<td>@item.Destination.TourName</td>
+													<td>@item.PersonCount</td>
+													<td>@item.ReservationDate.ToShortDateString()</td>
+													<td>@item.Status</td>
+												</tr>
+											}
+
+
+										</tbody>
+									</table>
+								}
+								else
+								{
+									<button type="button" class="btn mb-1 btn-primary btn-lg btn-block">Rezarvasyon bulunamadı.</button>
+
+								}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
 </div>

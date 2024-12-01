@@ -68,5 +68,10 @@ namespace TraversalCoreProject.WebUi.Areas.Member.Controllers
             _reservationService.TInsert(p);
             return RedirectToAction("MyCurrentReservation" , "Reservation" , new { area = "Member" });
         }
+
+        public IActionResult Deneme()
+        {
+            return View();
+        }
     }
 }
